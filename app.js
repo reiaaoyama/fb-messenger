@@ -47,6 +47,13 @@ app.post('/webhook', (req, res) => {
       // will only ever contain one message, so we get index 0
       let webhook_event = entry.messaging[0];
       console.log(webhook_event);
+
+      // Get the sender PSID
+      // PSID gives us the context of who we are talking to
+      // https://developers.facebook.com/docs/messenger-platform/getting-started/quick-start/#build
+      let sender_psid = webhook_event.sender.id;
+      console.log('Sender PSID: ' + sender_psid);
+
     });
 
     res.status(200).send('EVENT_RECEIVED');
