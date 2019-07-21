@@ -1,4 +1,4 @@
-# A couple of words of **SSL Certificate**
+# A couple of words about **SSL Certificate**
 
 ## You need the following stuffs, I think
 - `privkey.pem`  : the private key for your certificate.

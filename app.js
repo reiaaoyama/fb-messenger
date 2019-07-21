@@ -1,7 +1,7 @@
 // Example chat server servicing FB messenger chatbot
 // Adapted and modified from the original source on FB Example page
 // Retrieved on 2019-01-07
-// Copyright Pasvorn Boonmark 2019
+// Copyright Rei Alexandra Aoyama 2019
 // Release under FreeBSD license
 
 
@@ -34,6 +34,12 @@ const credentials = {
   key: privateKey, 
   cert: certificate};
 
+# process.env is great to set PAGE_ACCESS_TOKEN shell variable and use it
+# Here is how you do it
+# PAGE_ACCESS_TOKEN=`cat token.txt`; export PAGE_ACCESS_TOKEN
+#const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
+
+# Reading it from a file
 const PAGE_ACCESS_TOKEN = fs.readFileSync('../token.txt');
 
 // prepare https server
@@ -179,6 +185,7 @@ function handleMessage(sender_psid, received_message) {
 function handlePostback(sender_psid, received_postback) {
   // "received_postback is calle when a user tap menu or button
   // on the chat
+  // Currently nothing on here accept logging
 
   console.log("handlePostback() called:\n");
 
